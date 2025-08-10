@@ -25,6 +25,7 @@ class GeneEmbedding(nn.Module):
         x: torch.Tensor
     ):
         """x: (batch, num_genes, 1) tensor of expression values"""
+        
         return self.value_proj(x)  # → (batch, num_genes, dim)
 
 
@@ -46,7 +47,7 @@ class PositionEmbedding(nn.Module):
         x: torch.Tensor
     ):
         """x: embedded genes (batch, num_genes, dim)"""
-        # Automatically truncates if num_genes < max_genes
+
         return x + self.pos_embed[:, :x.size(1), :]
 
 
@@ -87,7 +88,7 @@ class Hyena(nn.Module):
         depth: int = 12,
         hyena_dropout: float = 0.1,
     ):
-        r"""
+        """
         Hyena: Hyena blocks
         Args:
             d_model (int): Dimension of the input and output embeddings (width of the layer)

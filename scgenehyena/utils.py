@@ -1,4 +1,7 @@
 import torch
+from typing import List
+import numpy as np
+
 
 
 def get_toy_data(
@@ -17,4 +20,11 @@ def get_toy_data(
         return masked_input, mask
     else:
         return input_data
+
+
+
+def get_unique_counts(data: List):
     
+    unique, counts = np.unique(data, return_counts=True)
+    
+    return dict(zip(unique, counts))

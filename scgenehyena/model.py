@@ -23,7 +23,7 @@ class ScGeneHyena(nn.Module):
         pretrain_head: str = 'masked_reconstruction',
         num_blocks: int = 1,
     ):
-        r"""
+        """
         ScGeneHyena: Hyena-based foundation model for single-cell genomics
         Args:
             num_genes (int): Number of the genes in the input data
